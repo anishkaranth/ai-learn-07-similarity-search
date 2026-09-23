@@ -1,0 +1,122 @@
+{
+  "project": "ai-learn-07-similarity-search",
+  "seed": 42,
+  "n_docs": 19,
+  "vocab_size": 142,
+  "dim": 142,
+  "n_bits_lsh": 64,
+  "candidate_pool": 8,
+  "k_eval": 5,
+  "n_eval_queries": 27,
+  "retrieval_checks": [
+    {
+      "query": "cat dog pets animals",
+      "expected_topic": "animals",
+      "top1_ok": false,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "s4", "topic": "science", "cosine": 0.2161},
+        {"doc_id": "a2", "topic": "animals", "cosine": 0.2032},
+        {"doc_id": "a1", "topic": "animals", "cosine": 0.1883}
+      ]
+    },
+    {
+      "query": "rain storm clouds weather",
+      "expected_topic": "weather",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "w2", "topic": "weather", "cosine": 0.4881},
+        {"doc_id": "a1", "topic": "animals", "cosine": 0.0},
+        {"doc_id": "a3", "topic": "animals", "cosine": 0.0}
+      ]
+    },
+    {
+      "query": "python java programming code",
+      "expected_topic": "programming",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "p1", "topic": "programming", "cosine": 0.6348},
+        {"doc_id": "a1", "topic": "animals", "cosine": 0.0},
+        {"doc_id": "a3", "topic": "animals", "cosine": 0.0}
+      ]
+    },
+    {
+      "query": "king queen castle royalty",
+      "expected_topic": "royalty",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "r1", "topic": "royalty", "cosine": 0.6099},
+        {"doc_id": "a1", "topic": "animals", "cosine": 0.0},
+        {"doc_id": "a3", "topic": "animals", "cosine": 0.0}
+      ]
+    },
+    {
+      "query": "math physics science school",
+      "expected_topic": "science",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "s1", "topic": "science", "cosine": 0.5236},
+        {"doc_id": "s2", "topic": "science", "cosine": 0.1753},
+        {"doc_id": "a3", "topic": "animals", "cosine": 0.0}
+      ]
+    },
+    {
+      "query": "neural networks embeddings vectors",
+      "expected_topic": "programming",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "p3", "topic": "programming", "cosine": 0.3422},
+        {"doc_id": "p2", "topic": "programming", "cosine": 0.3395},
+        {"doc_id": "a1", "topic": "animals", "cosine": 0.0}
+      ]
+    },
+    {
+      "query": "moon stars night sky",
+      "expected_topic": "weather",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "w3", "topic": "weather", "cosine": 0.5609},
+        {"doc_id": "a3", "topic": "animals", "cosine": 0.1465},
+        {"doc_id": "a2", "topic": "animals", "cosine": 0.0}
+      ]
+    },
+    {
+      "query": "birds fish swim fly",
+      "expected_topic": "animals",
+      "top1_ok": true,
+      "top3_ok": true,
+      "top_hits": [
+        {"doc_id": "a3", "topic": "animals", "cosine": 0.6151},
+        {"doc_id": "a4", "topic": "animals", "cosine": 0.1392},
+        {"doc_id": "a2", "topic": "animals", "cosine": 0.0}
+      ]
+    }
+  ],
+  "n_queries_top1_pass": 7,
+  "n_queries_top3_pass": 8,
+  "n_labeled_queries": 8,
+  "retrieval_sanity": "PASS",
+  "mean_recall_at_5_lsh_hamming": 0.4296,
+  "mean_recall_at_5_lsh_rerank": 0.5852,
+  "mean_recall_at_5_random": 0.2148,
+  "approx_beats_random": true,
+  "recall_curve": [
+    {"k": 1, "recall_lsh_hamming": 0.963, "recall_lsh_rerank": 0.963, "recall_random": 0.0},
+    {"k": 2, "recall_lsh_hamming": 0.6111, "recall_lsh_rerank": 0.8148, "recall_random": 0.0556},
+    {"k": 3, "recall_lsh_hamming": 0.4444, "recall_lsh_rerank": 0.679, "recall_random": 0.1358},
+    {"k": 4, "recall_lsh_hamming": 0.463, "recall_lsh_rerank": 0.6111, "recall_random": 0.2222},
+    {"k": 5, "recall_lsh_hamming": 0.4296, "recall_lsh_rerank": 0.5852, "recall_random": 0.2741},
+    {"k": 6, "recall_lsh_hamming": 0.4506, "recall_lsh_rerank": 0.5617, "recall_random": 0.2469},
+    {"k": 7, "recall_lsh_hamming": 0.5079, "recall_lsh_rerank": 0.5556, "recall_random": 0.3757},
+    {"k": 8, "recall_lsh_hamming": 0.5648, "recall_lsh_rerank": 0.5648, "recall_random": 0.375},
+    {"k": 9, "recall_lsh_hamming": 0.5926, "recall_lsh_rerank": 0.5391, "recall_random": 0.4568},
+    {"k": 10, "recall_lsh_hamming": 0.6148, "recall_lsh_rerank": 0.5074, "recall_random": 0.5111}
+  ],
+  "runtime_s": 0.701
+}
