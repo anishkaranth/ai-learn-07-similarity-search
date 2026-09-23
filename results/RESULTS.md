@@ -12,7 +12,7 @@
 | Mean recall@5 (LSH Hamming only) | 0.4296 |
 | Mean recall@5 (random baseline) | 0.2148 |
 | Approx beats random | PASS |
-| Wall time (CPU) | 0.70s |
+| Wall time (CPU) | 0.62s |
 
 ## Exact retrieval checks (expected topic in top-3)
 
@@ -44,9 +44,11 @@
 
 ## Plots
 
-- [`topk_scores.png`](topk_scores.png) / [`topk_scores.svg`](topk_scores.svg)
-- [`query_doc_heatmap.png`](query_doc_heatmap.png) / [`query_doc_heatmap.svg`](query_doc_heatmap.svg)
-- [`recall_at_k.png`](recall_at_k.png) / [`recall_at_k.svg`](recall_at_k.svg)
+- [`topk_scores.svg`](topk_scores.svg) — top-5 cosine for a labeled query
+- [`recall_at_k.svg`](recall_at_k.svg) — exact vs LSH/random recall@k
+- [`query_doc_heatmap.svg`](query_doc_heatmap.svg) — query→topic max-cosine heatmap
+
+(SVG vector plots, same pattern as ai-learn-06.)
 
 ## Takeaway
 
