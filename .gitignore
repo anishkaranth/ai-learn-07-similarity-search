@@ -9,7 +9,7 @@ env/
 .DS_Store
 *.egg-info/
 .pytest_cache/
-.mymy_cache/
+.mypy_cache/
 .ruff_cache/
 dist/
 build/
