@@ -35,6 +35,7 @@ Hamming distance between codes approximates cosine distance (Charikar / SimHash)
 ```
 corpus.py              # toy document corpus + labeled queries
 similarity_search.py   # TF-IDF, exact search, LSH, metrics helpers
+smoke_plots.py         # plot + RESULTS.md writers
 run_smoke.py           # end-to-end smoke -> results/
 notebooks/similarity_search.ipynb
 results/               # committed metrics + plots
